@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\drf1609hSwitch.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\..\Core\Thread\CC26xx\ZStackCore.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>All</name>
+            <member>
+                <project>SampleSwitch</project>
+                <configuration>SmartRF06</configuration>
+            </member>
+            <member>
+                <project>SampleSwitch</project>
+                <configuration>SensorTag</configuration>
+            </member>
+            <member>
+                <project>ZStackCore</project>
+                <configuration>EndDevice</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>
