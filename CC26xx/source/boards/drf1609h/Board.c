@@ -66,7 +66,7 @@ PIN_Config BoardGpioInitTable[] = {
     Board_LED3       | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW   | PIN_PUSHPULL | PIN_DRVSTR_MAX,     /* LED initially off             */
     Board_LED4       | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW   | PIN_PUSHPULL | PIN_DRVSTR_MAX,     /* LED initially off             */
     Board_KEY_SELECT | PIN_INPUT_EN  | PIN_PULLUP | PIN_HYSTERESIS,                             /* Button is active low          */
-    Board_KEY_DOWN   | PIN_INPUT_EN  | PIN_PULLUP | PIN_HYSTERESIS,                             /* Button is active low          */
+//    Board_KEY_DOWN   | PIN_INPUT_EN  | PIN_PULLUP | PIN_HYSTERESIS,                             /* Button is active low          */
     Board_UART_TX    | PIN_GPIO_OUTPUT_EN | PIN_GPIO_HIGH   | PIN_PUSHPULL,                     /* UART TX pin at inactive level */
     PIN_TERMINATE                                                                               /* Terminate list                */
 };
@@ -138,60 +138,60 @@ const UDMACC26XX_Config UDMACC26XX_config[] = {
  *  ============================= UDMA end =====================================
 */
 
-/*
- *  ========================== SPI DMA begin ===================================
-*/
-/* Place into subsections to allow the TI linker to remove items properly */
-#if defined(__TI_COMPILER_VERSION__)
-#pragma DATA_SECTION(SPI_config, ".const:SPI_config")
-#pragma DATA_SECTION(spiCC26XXDMAHWAttrs, ".const:spiCC26XXDMAHWAttrs")
-#endif
-
-/* Include drivers */
-#include <ti/drivers/spi/SPICC26XXDMA.h>
-
-/* SPI objects */
-SPICC26XX_Object spiCC26XXDMAobjects[CC2650_SPICOUNT];
-
-/* SPI configuration structure, describing which pins are to be used */
-const SPICC26XX_HWAttrs spiCC26XXDMAHWAttrs[CC2650_SPICOUNT] = {
-    {   /* SRF06EB_CC2650_SPI0 */
-        .baseAddr = SSI0_BASE,
-        .intNum = INT_SSI0,
-        .defaultTxBufValue = 0,
-        .powerMngrId = PERIPH_SSI0,
-        .rxChannelBitMask = 1<<UDMA_CHAN_SSI0_RX,
-        .txChannelBitMask = 1<<UDMA_CHAN_SSI0_TX,
-        .mosiPin = Board_SPI0_MOSI,
-        .misoPin = Board_SPI0_MISO,
-        .clkPin = Board_SPI0_CLK,
-        .csnPin = PIN_UNASSIGNED     /* Note: LCD uses SPI0 */
-    },
-    {   /* SRF06EB_CC2650_SPI1 */
-        .baseAddr = SSI1_BASE,
-        .intNum = INT_SSI1,
-        .defaultTxBufValue = 0,
-        .powerMngrId = PERIPH_SSI1,
-        .rxChannelBitMask = 1<<UDMA_CHAN_SSI1_RX,
-        .txChannelBitMask = 1<<UDMA_CHAN_SSI1_TX,
-        .mosiPin = Board_SPI1_MOSI,
-        .misoPin = Board_SPI1_MISO,
-        .clkPin = Board_SPI1_CLK,
-        .csnPin = PIN_UNASSIGNED
-    }
-};
-
-/* SPI configuration structure */
-const SPI_Config SPI_config[] = {
-    /* SRF06EB_CC2650_SPI0 */
-    {&SPICC26XXDMA_fxnTable, &spiCC26XXDMAobjects[0], &spiCC26XXDMAHWAttrs[0]},
-    /* SRF06EB_CC2650_SPI1 */
-    {&SPICC26XXDMA_fxnTable, &spiCC26XXDMAobjects[1], &spiCC26XXDMAHWAttrs[1]},
-    {NULL, NULL, NULL},
-};
-/*
- *  ========================== SPI DMA end =====================================
-*/
+///*
+// *  ========================== SPI DMA begin ===================================
+//*/
+///* Place into subsections to allow the TI linker to remove items properly */
+//#if defined(__TI_COMPILER_VERSION__)
+//#pragma DATA_SECTION(SPI_config, ".const:SPI_config")
+//#pragma DATA_SECTION(spiCC26XXDMAHWAttrs, ".const:spiCC26XXDMAHWAttrs")
+//#endif
+//
+///* Include drivers */
+//#include <ti/drivers/spi/SPICC26XXDMA.h>
+//
+///* SPI objects */
+//SPICC26XX_Object spiCC26XXDMAobjects[CC2650_SPICOUNT];
+//
+///* SPI configuration structure, describing which pins are to be used */
+//const SPICC26XX_HWAttrs spiCC26XXDMAHWAttrs[CC2650_SPICOUNT] = {
+//    {   /* SRF06EB_CC2650_SPI0 */
+//        .baseAddr = SSI0_BASE,
+//        .intNum = INT_SSI0,
+//        .defaultTxBufValue = 0,
+//        .powerMngrId = PERIPH_SSI0,
+//        .rxChannelBitMask = 1<<UDMA_CHAN_SSI0_RX,
+//        .txChannelBitMask = 1<<UDMA_CHAN_SSI0_TX,
+//        .mosiPin = Board_SPI0_MOSI,
+//        .misoPin = Board_SPI0_MISO,
+//        .clkPin = Board_SPI0_CLK,
+//        .csnPin = PIN_UNASSIGNED     /* Note: LCD uses SPI0 */
+//    },
+//    {   /* SRF06EB_CC2650_SPI1 */
+//        .baseAddr = SSI1_BASE,
+//        .intNum = INT_SSI1,
+//        .defaultTxBufValue = 0,
+//        .powerMngrId = PERIPH_SSI1,
+//        .rxChannelBitMask = 1<<UDMA_CHAN_SSI1_RX,
+//        .txChannelBitMask = 1<<UDMA_CHAN_SSI1_TX,
+//        .mosiPin = Board_SPI1_MOSI,
+//        .misoPin = Board_SPI1_MISO,
+//        .clkPin = Board_SPI1_CLK,
+//        .csnPin = PIN_UNASSIGNED
+//    }
+//};
+//
+///* SPI configuration structure */
+//const SPI_Config SPI_config[] = {
+//    /* SRF06EB_CC2650_SPI0 */
+//    {&SPICC26XXDMA_fxnTable, &spiCC26XXDMAobjects[0], &spiCC26XXDMAHWAttrs[0]},
+//    /* SRF06EB_CC2650_SPI1 */
+//    {&SPICC26XXDMA_fxnTable, &spiCC26XXDMAobjects[1], &spiCC26XXDMAHWAttrs[1]},
+//    {NULL, NULL, NULL},
+//};
+///*
+// *  ========================== SPI DMA end =====================================
+//*/
 
 /*
  *  ========================== Crypto begin =======================================
