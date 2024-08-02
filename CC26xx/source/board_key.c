@@ -80,11 +80,12 @@ static PIN_Config keyPinTable[] =
     Board_KEY_SELECT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE, /* KEY
                                                                       SELECT
                                                                           */
-    Board_KEY_UP | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,     /* KEY UP
-
-                                                                             */
-    Board_KEY_DOWN | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,   /* KEY DOWN
-                                                                            */
+//    Board_KEY_UP | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,     /* KEY UP
+//
+//                                                                             */
+//    Board_KEY_DOWN | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,   /* KEY DOWN
+//                                                                            */
+    
 #if defined (MODULE_CC26XX_7X7)
     Board_KEY_LEFT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,   /* KEY LEFT
                                                                             */
@@ -92,11 +93,11 @@ static PIN_Config keyPinTable[] =
                                                                       RIGHT
                                                                            */
 #elif defined (MODULE_CC26XX_5X5)
-    Board_KEY_LEFT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,   /* KEY LEFT
-                                                                            */
-    Board_KEY_RIGHT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,  /* KEY
-                                                                      RIGHT
-                                                                           */
+//    Board_KEY_LEFT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,   /* KEY LEFT
+//                                                                            */
+//    Board_KEY_RIGHT | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_NEGEDGE,  /* KEY
+//                                                                      RIGHT
+//                                                                           */
 #elif defined (MODULE_CC26XX_4X4)
     /* Board_KEY_LEFT and Board_KEY_RIGHT are not connected to
       MODULE_CC26XX_4X4. */
@@ -152,23 +153,23 @@ void board_key_keyFxn(PIN_Handle keyPinHandle, PIN_Id keyPinId)
     {
         keysPressed |= KEY_SELECT;
     }
-    else if(keyPinId == Board_KEY_UP)
-    {
-        keysPressed |= KEY_UP;
-    }
-    else if(keyPinId == Board_KEY_DOWN)
-    {
-        keysPressed |= KEY_DOWN;
-    }
+//    else if(keyPinId == Board_KEY_UP)
+//    {
+//        keysPressed |= KEY_UP;
+//    }
+//    else if(keyPinId == Board_KEY_DOWN)
+//    {
+//        keysPressed |= KEY_DOWN;
+//    }
 #if defined (MODULE_CC26XX_7X7) || defined (MODULE_CC26XX_5X5)
-    else if(keyPinId == Board_KEY_LEFT)
-    {
-        keysPressed |= KEY_LEFT;
-    }
-    else if(keyPinId == Board_KEY_RIGHT)
-    {
-        keysPressed |= KEY_RIGHT;
-    }
+//    else if(keyPinId == Board_KEY_LEFT)
+//    {
+//        keysPressed |= KEY_LEFT;
+//    }
+//    else if(keyPinId == Board_KEY_RIGHT)
+//    {
+//        keysPressed |= KEY_RIGHT;
+//    }
 #endif // (MODULE_CC26XX_7X7) || (MODULE_CC26XX_5X5)
 
     if(Util_isClockActive(&keyChangeClock) != true)
