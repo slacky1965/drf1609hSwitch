@@ -36,11 +36,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state>Automatic choice of formatter.</state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>Automatic choice of formatter.</state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -62,7 +62,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -244,7 +244,7 @@
                     <state>ICALL_HOOK_ABORT_FUNC=halAssertHandler</state>
                     <state>xdc_runtime_Log_DISABLE_ALL</state>
                     <state>xdc_runtime_Assert_DISABLE_ALL</state>
-                    <state>MODULE_CC26XX_7X7</state>
+                    <state>MODULE_CC26XX_5X5</state>
                     <state>xTI_DRIVERS_LCD_INCLUDED</state>
                     <state>BOARD_DRF1609H</state>
                     <state>xBOARD_LIVOLO</state>
