@@ -233,7 +233,7 @@
                     <state>ZCL_BASIC</state>
                     <state>ZCL_ON_OFF</state>
                     <state>ZCL_IDENTIFY</state>
-                    <state>ZCL_EZMODE</state>
+                    <state>xZCL_EZMODE</state>
                     <state>xZCL_GROUPS</state>
                     <state>xZCL_SCENES</state>
                     <state>ZCL_STANDALONE</state>
