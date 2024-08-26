@@ -10,12 +10,8 @@
         <batchDefinition>
             <name>All</name>
             <member>
-                <project>SampleSwitch</project>
+                <project>drf1609hSwitch</project>
                 <configuration>SmartRF06</configuration>
-            </member>
-            <member>
-                <project>SampleSwitch</project>
-                <configuration>SensorTag</configuration>
             </member>
             <member>
                 <project>ZStackCore</project>
