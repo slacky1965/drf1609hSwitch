@@ -16,7 +16,7 @@
     </variable>
     <variable>
       <name>BOUNDARY</name>
-      <value>C:\Program Files (x86)\Texas Instruments\Boundary</value>
+      <value>C:\ti\boundary</value>
     </variable>
   </group>
 </iarUserArgVars>
